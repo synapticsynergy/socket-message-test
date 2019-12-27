@@ -1,0 +1,22 @@
+{
+  "name": "socket-message-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "chat-frontend.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/synapticsynergy/socket-message-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/synapticsynergy/socket-message-test/issues"
+  },
+  "homepage": "https://github.com/synapticsynergy/socket-message-test#readme",
+  "dependencies": {
+    "websocket": "^1.0.31"
+  }
+}
