@@ -37,6 +37,20 @@ colors.sort(function(a,b) { return Math.random() > 0.5; } );
  */
 var server = http.createServer(function(request, response) {
     // Not important for us. We're writing WebSocket server, not HTTP server
+    console.log('testing message')
+    // we want to keep history of all sent messages
+    var obj = {
+        time: (new Date()).getTime(),
+        text: 'Message from Jarvis, do you copy?',
+        author: 'jarvis',
+        color: 'red'
+    };
+
+    // broadcast message to all connected clients
+    var json = JSON.stringify({ type:'message', data: obj });
+    for (var i=0; i < clients.length; i++) {
+        clients[i].sendUTF(json);
+    }
 });
 server.listen(webSocketsServerPort, function() {
     console.log((new Date()) + " Server is listening on port " + webSocketsServerPort);
